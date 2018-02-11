@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-from datetime import datetime
-
-NM=input("Enter Name");
-AG=int(input("Enter Age"));
-MS=int(input("No. of time you want to print the output"));
-HA=datetime.now().year+100-AG;
-print("Hi " + NM);  
-report=("You will be 100 year old in " + str(HA));
-print (" %s \n"%report * MS);
+import datetime
+now = datetime.datetime.now()
+name = input("Enter your name: ")
+age = input("Enter you age: ")
+year = now.year
+born = year - int(age)
+if born + 100 < year:
+    print("You turned 100 in year", born + 100,". Many more to go")
+elif born + 100 == year:
+    print("Congratulations!!! for turning 100 in current year", born + 100, ". 100 more to go") 
+else:
+    print("Hi", name, "You will be 100 years old in", born + 100, ". Live healthy")
